@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript setInterval()</h1>
+
+    <p>使用 setInterval() 显示时间，间隔为一秒（1000 毫秒）。</p>
+
+    <h1 id="demo1"></h1>
+    <h1 id="demo2"></h1>
+
+    <script>
+        // 回調函數-計時器
+        setInterval(myFunction, 1000);
+
+        function myFunction() {
+            let d = new Date();
+            document.getElementById("demo1").innerHTML =
+                d.getHours() + ":" +
+                d.getMinutes() + ":" +
+                d.getSeconds();
+        }
+
+        //回調函數
+        function myDisplayer(some) {
+            document.getElementById("demo2").innerHTML = some;
+        }
+
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest();
+            // 跨站請求被拒絕,需要同一個路由或者其他方法來獲取
+            req.open('GET', "./mycar.html");
+            // html請求完成才會回顯
+            req.onload = function () {
+                if (req.status == 200) {
+                    myCallback(this.responseText);
+                } else {
+                    myCallback("Error: " + req.status);
+                }
+            }
+            req.send();
+        }
+
+        getFile(myDisplayer);
+    </script>
+
+</body>
+
+</html>

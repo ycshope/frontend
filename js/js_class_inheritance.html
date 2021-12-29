@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript Class 继承</h1>
+
+    <p>请使用 "extends" 关键字从另一个类继承所有方法。</p>
+    <p>使用 "super" 方法调用父级的构造函数。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        class Car {
+            constructor(brand) {
+                this.carname = brand;
+            }
+            present() {
+                return 'I have a ' + this.carname;
+            }
+        }
+
+
+        //繼承
+        class Model extends Car {
+            constructor(brand, mod) {
+                //super() 方法引用父类。
+                // 通过在 constructor 方法中调用 super() 方法，
+                // 我们调用了父级的 constructor 方法，获得了父级的属性和方法的访问权限。
+                super(brand);
+                this.model = mod;
+            }
+            show() {
+                return this.present() + ', it is a ' + this.model;
+            }
+        }
+
+        let myCar = new Model("Ford", "Mustang");
+        document.getElementById("demo").innerHTML = myCar.show();
+    </script>
+
+</body>
+
+</html>

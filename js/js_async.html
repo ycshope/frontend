@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript async / await</h1>
+
+    <p id="demo1"></p>
+
+    <h1>JavaScript async / await</h1>
+
+    <p>请等待 3 秒（3000 毫秒）让此页面发生变化。</p>
+
+    <h1 id="demo2"></h1>
+
+    <script>
+        // async 使函数返回 Promise
+        // await 使函数等待 Promise
+
+        function myDisplayer(some) {
+            document.getElementById("demo1").innerHTML = some;
+        }
+
+        async function myFunction() { return "Hello"; }
+
+        //通過返回值判斷
+        myFunction().then(
+            function (value) { myDisplayer(value); },
+            function (error) { myDisplayer(error); }
+        );
+
+
+        //         Await 语法
+        // 函数前的关键字 await 使函数等待 promise：
+
+        // let value = await promise;
+        // await 关键字只能在 async 函数中使用。
+
+        //case1.等待超时--请等待 3 秒（3000 毫秒）让此页面发生变化。
+        async function myDisplay() {
+            let myPromise = new Promise(function (myResolve, myReject) {
+                setTimeout(function () { myResolve("I love You !!"); }, 3000);
+            });
+            document.getElementById("demo2").innerHTML = await myPromise;
+        }
+
+        myDisplay();
+
+        //case2. 等待文件
+        async function getFile() {
+            let myPromise = new Promise(function (myResolve, myReject) {
+                let req = new XMLHttpRequest();
+                req.open('GET', "mycar.html");
+                req.onload = function () {
+                    if (req.status == 200) { myResolve(req.response); }
+                    else { myResolve("File not Found"); }
+                };
+                req.send();
+            });
+            document.getElementById("demo").innerHTML = await myPromise;
+        }
+
+        getFile();
+    </script>
+
+
+
+</body>
+
+</html>

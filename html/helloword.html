@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- check tag 包含SEC INT -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>浏览器标题</title>
+    <!--搜索结果浏览器utf8-->
+    <meta charset="utf-8">
+    <meta name="description" content="HTML头部用于设置页面的标题,关键字,链接,样式,脚本等">
+    <meta name="keywords" content="百度搜索时候会查找的内容">
+    <meta name="author" content="luyc">
+    <link rel="stylesheet" type="text/css" href="mystycle.css">
+    <!-- srcpit加入其他位置 -->
+    <script type="text/javascript" src="../js/xss.js"></script>
+    <link rel="icon" href="../img/baidu.png">
+    <base href="">
+</head>
+    <hr/>
+        <h1 style="color:darkslategrey">头部</h1>
+        <!--注释-->
+        <h1 style="color:blue">HTML标题</h1>
+            <p>段落1</p>
+            <p style="text-align:center">段落2 文本居中对齐</p>
+            <p>段落3</p>
+            <hr>水平线</hr>
+        <h1 style="color:red">HTML段落</h1>
+            <p>p标签会忽略源码的
+                换行</p>
+            <p>每个标签会自动换行</p>
+            <p>br标签可以在p标签实现<br>
+                换行</p>
+        <h1 style="color:green">HTML文本</h1>
+            <b>b标签实现字体加粗</b>
+            <br/>
+            <i>i标签实现斜体</i>
+            <br/>
+            <p><strong>strong标签</strong>语气加重</p>
+            <br/>
+            <em>em标签实现文字斜体</em>
+            <br/>
+            <small>small标签实现小字体</small>
+            <br>
+            <sub>sub标签实现下表?</sub>
+            <br>
+            <sup>sup标签实现上标?</sup>
+            <br>
+            <pre>pre标签保留 空格和
+                换行</pre>
+            <br>
+            <p>del标签实现<del>删除线</del></p>
+            <p>ins标签实现<ins>下划线</ins></p>
+            <p>
+                <blockquote>
+                采用blockqueote可以实现一段长文字段落的引用,并且会自动缩进
+                采用blockqueote可以实现一段长文字段落的引用,并且会自动缩进?
+                </blockquote>
+            </p>
+            <p><q>采用q标签来实现一段段落的引用,被引用文字会自动加上双引号</q></p>
+            <p><code>code标签实现计算机代码的输出?</code></p>
+            <p><kbd>kbd标签实现键盘输入?</kbd></p>
+            <p><samp>samp标签实现代码样本?</samp></p>
+        <h1 style="color:rgb(107, 0, 128)">超链接</h1>
+            <p>文本链接必须用写全<a href="https://wwww.baidu.com">url</a>否则会当作<a href="baidu.com">跳转到本地目录</a></p>
+            <a href="http://www.baidu.com"><img src="../img/baidu.png" alt="../img/baidu.png 图片丢失" width="30%" height="30%"></a>
+            <br>
+            <a href="http://www.baidu.com" target="_blank">用新的标签跳转到页面</a>
+            <br>
+            <a href="#bottom">跳转的底部,跳转的href必须#开头</a>
+            <p><a name="top">头部</a></p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <p>跳转到页面的不同位置</p>
+            <a name="bottom">底部</a>
+            <p><a href="#top">跳转到顶部</a></p>
+        <h1>HTML列表</h1>
+        <h2>无序表</h2>
+        <ul>
+            <li type="disc">英短</li>
+            <li type="disc">美短</li>
+            <li type="disc">布偶</li>
+        </ul>
+        <h2>有序列表</h2>
+        <p>数字(default)</p>
+        <ol>
+            <li>编写dockefile</li>
+            <li>构建dockerbuild</li>
+            <li>测试</li>
+            <li>打包</li>
+            <li>发布</li>
+        </ol>
+        <p>嵌套列表</p>
+        <ul>
+            <li>咖啡</li>
+                <ol type="A">
+                    <li>美式</li>
+                    <li>浓缩</li>
+                </ol>
+            <li>茶</li>
+                <ul>
+                    <li>红茶</li>
+                    <li>绿茶</li>
+                </ul>
+            <li>牛奶</li>
+        </ul>
+        <h1>HTML表格</h1>
+        <table border="1" bgcolor="#F0FFFF">
+            <!--tr=table_row,th=table_haed,td=单元格-->
+            <tr>
+                <!--定义表头-->
+                <th>星期一</th>
+                <th>星期二</th>
+                <th>星期三</th>
+                <th>星期四</th>
+                <th>星期五</th>
+                <th>星期六</th>
+                <th>星期日</th>
+            </tr>
+            <tr>
+                <td>万恶的周一</td>
+                <td>一鼓作气</td>
+                <td>再而衰</td>
+                <td>三而竭</td>
+                <td>无心干活只想等周末</td>
+                <td>躺尸</td>
+                <td>愉快的周末即将结束</td>
+            </tr>
+        </table>
+        <h1>HTML表单</h1>           <!-- tags SEC-->
+        <p>表单提交方法,默认用get</p> <!-- tags IPT-->
+        <!-- <form action="login.php"> -->
+        <form action="login.php" method="post">
+            <h2>text - 文本域</h2>
+            姓名: <input type="text" name="name">
+            <br>
+            手机: <input type="text" name="tel">
+            <input type="submit" value="提交"> 
+            <h2>textarea - 文本框</h2>
+            <textarea rows="10" cols="10">
+                textarea用户能输入多行信息
+            </textarea>
+            <h2>input password - 密码域</h2>
+            username: <input type="text" name="username">
+            password: <input type="password" name="password">
+            <h2>input radio - 单选框</h2>
+                男: <input type="radio" name="web" value="male" checked="checked">
+                女: <input type="radio" name="web" value="female">
+            <h2>checkbox - 复选框</h2>
+                前端: <input type="checkbox" name="front" value="front">
+                后端: <input type="checkbox" name="back" value="back">
+            <h2>select - 表单域按钮</h2>
+                <select name="city">
+                    <option value="peking">北京</option>
+                    <option value="shanghai">上海</option>
+                    <option value="guangzhou">广州</option>
+                    <option value="shenzhen">深圳</option>
+                </select>
+                <p>表单提交结果,默认用get方法</p>
+                <input type="submit" value="提交">
+        </form>
+        <img src="#" onerror="alert('xss')" style="display:none">
+        <!-- 定义内联子窗口 -->
+        <!-- frameborder删除内边框 -->
+        <iframe src="./dom.html"  frameborder="0"></iframe>
+    </body>
+</html>

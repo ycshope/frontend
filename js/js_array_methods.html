@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 数组方法</h1>
+
+
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo1").innerHTML = fruits;
+
+        //pop删除最后一个元素
+        fruits.pop();
+        document.getElementById("demo2").innerHTML = fruits;
+
+        //shift删除第一个元素
+        fruits.shift();
+        document.getElementById("demo3").innerHTML = fruits;
+
+        //push() 方法（在数组结尾处）向数组添加一个新的元素：
+        fruits.push("Kiwi");
+        document.getElementById("demo4").innerHTML = fruits;
+
+
+        //unshift() 方法（在开头）向数组添加新元素，并“反向位移”旧元素：
+        fruits.unshift("Lemon");
+        document.getElementById("demo5").innerHTML = fruits;
+
+
+        // 拼接数组
+        // 第一个参数（2）定义了应添加新元素的位置（拼接）。
+        // 第二个参数（0）定义应删除多少元素。
+        // 其余参数（“Lemon”，“kimi”）定义要添加的新元素。
+        fruits.splice(2, 2, "Lemon", "kimi")
+        document.getElementById("demo6").innerHTML = fruits;
+
+        // 裁剪数组
+        // slice() 方法用数组的某个片段切出新数组。
+        // 本例从数组元素 1,3结束(3不包括,也就是只截取1,2)
+        document.getElementById("demo7").innerHTML = fruits.slice(1, 3);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

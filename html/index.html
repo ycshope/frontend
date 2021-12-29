@@ -1,0 +1,80 @@
+<!--
+    WEB项目流程:
+        1.先通过DIV进行排版,将不同内容隔离在不同的DIV块中;
+        2.未每个独立的DIV模块里面,填充HTML内容(h/p/a/img/table/form);
+        3.为了让页面更好看,引入CSS样式
+        5.为了让页面更酷炫,引入JavaScript脚本
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>W3school</title>
+    <link rel="icon" href="../img/coin.png" width="10%" height="10%">
+    <link href="../css/DropDownMenu.css" rel="stylesheet"></link>
+    <link href="../css/slide.css" rel="stylesheet"></link>
+    <link href="../css/main.css" rel="stylesheet"></link>
+    <script src="../js/SlidePic.js"></script>
+    <!-- <script src="../js/DropDownMenu.js"></script> //Q:分成两个JS就无法执行? -->
+    <style>
+        .top {
+            display: none; /*默认隐藏*/
+            position: fixed; /*位置固定*/
+            right: 0; /*距离网页右边0px*/
+            top: 50%;
+            width: 80px;
+            height: 45px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <a href="index.html"><img src="../img/csdn.png"  width="70%" height="70%"></a>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#" class="selected_course">精品课</a>
+                <ul><a href="#">初级班</a></ul>
+                <ul><a href="#">中级班</a></ul>
+                <ul><a href="#">高级班</a></ul>
+            </li>
+            <li><a href="#">教程库</a></li>
+            <li><a href="#">在线课</a></li>
+            <li><a href="#">直播课</a></li>
+            <li><a href="#">面授课</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <ul><a href="login.html">登录</a></ul>
+        <ul><a href="#">注册</a></ul>
+    </div>
+    <div>
+        <!-- 滑动到顶部 -->
+        <button class="top" id="Return2TopBtm">返回顶部</button>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="banner"></div>
+        <a href="#">
+            <!-- <img id="pic" src="#" alt="img not fond.." width="800px" height="auto"> -->
+            <img id="pic" src="../img/banner2.jpg" alt="img not fond.." width="auto" height="auto">
+    <div class="main">
+        <div class="left"></div>
+        <div class="mid">
+            <div class="course"><a><img src="../img/course1.jpg"><br>WiFi攻防那些事</a></div>
+            <div class="course"><a><img src="../img/course2.jpg"><br>BT5&Metaspolit</a></div>
+            <div class="course"><a><img src="../img/course3.jpg"><br>防火墙从入门到精通</a></div>
+            <div class="course"><a><img src="../img/course4.jpg"><br>Web安全渗透课之入门导论</a></div>
+        </div>
+        <div class="right"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="copyright"></div>
+    <div class="url"></div>
+    <div class="share"></div>
+</div>
+</body>
+</html>

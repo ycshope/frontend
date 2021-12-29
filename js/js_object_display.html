@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title>如何显示 JavaScript 对象？</title>
+    <h1>如何显示 JavaScript 对象？</h1>
+    <div id="body">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+    </div>
+    <script>
+        //显示 JavaScript 对象的一些常见解决方案是：
+        // 1.称显示对象属性
+        // 2.循环显示对象属性
+        // 3.使用 Object.values() 显示对象
+        // 4.使用 JSON.stringify() 显示对象
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        //直接輸出無法顯示
+        document.getElementById("demo1").innerHTML = person; //[object Object]
+
+        //在循环中显示对象
+        let txt = "";
+        for (let x in person) {
+            txt += person[x] + " ";
+        };
+        document.getElementById("demo2").innerHTML = txt;
+
+        // 通过使用 Object.values()，任何 JavaScript 对象都可以被转换为数组：
+        const myArray = Object.values(person);
+        document.getElementById("demo3").innerHTML = myArray;
+
+        // 任何 JavaScript 对象都可以使用 JavaScript 函数 JSON.stringify() 进行字符串化（转换为字符串）：----推薦
+        let myString = JSON.stringify(person);
+        document.getElementById("demo4").innerHTML = myString; //{"name":"John","age":30,"city":"New York"}
+    </script>
+</body>
+
+</html>

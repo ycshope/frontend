@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript Class Static 方法</h1>
+
+    <p>如需在静态方法中使用 "myCar" 对象，您可以将其作为参数发送。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        //static 类方法是在类本身上定义的。
+
+        // 您不能在对象上调用 static 方法，只能在对象类上调用。
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+            static hello(x) {
+                return "Hello " + x.name;
+            }
+        }
+
+        // 您可以在 Car 类上调用 'hello()' ：
+        let myCar = new Car("Ford");
+        document.getElementById("demo").innerHTML = Car.hello(myCar);
+
+// 但不能在 Car 对象上调用：
+// document.getElementById("demo").innerHTML = myCar.hello();
+// 此举将引发错误。
+    </script>
+
+</body>
+
+</html>

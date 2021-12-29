@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>用 JSON 字符串创建对象</h1>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p>查看 <a href="./json_demo.txt" target="_blank">json_demo.txt</a></p>
+    <script>
+        // 从 Web 服务器接收数据时，数据始终是字符串。
+
+        // 用 JSON.parse() 解析数据，数据会成为 JavaScript 对象。
+        //解析來自服務端的json
+        function recJsonFromServer() {
+            var text = '{"employees":[' +
+                '{"firstName":"Bill","lastName":"Gates" },' +
+                '{"firstName":"Steve","lastName":"Jobs" },' +
+                '{"firstName":"Elon","lastName":"Musk" }]}';
+
+            obj = JSON.parse(text);
+            document.getElementById("demo1").innerHTML =
+                obj.employees[1].firstName + " " + obj.employees[1].lastName;
+        }
+
+        //使用 AJAX 请求从服务器请求 JSON
+        function reqJson() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myObj = JSON.parse(this.responseText);
+                    document.getElementById("demo").innerHTML = myObj.name;
+                    // 接收數組
+                    // document.getElementById("demo").innerHTML  = myArr[0];
+                }
+            };
+            // CORS
+            xmlhttp.open("GET", "json_demo.txt", true);
+            xmlhttp.send();
+        }
+        // 解析日期
+        function parseDate() {
+            var text = '{ "name":"Bill Gates", "birth":"1955-10-28", "city":"Seattle"}';
+            var obj = JSON.parse(text);
+            obj.birth = new Date(obj.birth);
+            document.getElementById("demo2").innerHTML = obj.name + ", " + obj.birth;
+        }
+        recJsonFromServer();
+        reqJson();
+        parseDate();
+    </script>
+
+</body>
+
+</html>

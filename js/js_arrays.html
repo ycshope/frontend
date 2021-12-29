@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 数组</h1>
+
+    <p>Array.forEach() 为每个数组元素调用函数。</p>
+
+    <p>Internet Explorer 8 以及更早的版本不支持 Array.forEach()。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var fruits, text;
+        fruits = ["Banana", "Orange", "Apple", "Mango"];
+        arr2 = ["hello", "word", "!"];
+
+        text = "<ul>";
+        // 遍历的2种方法,其中一种是for,另一种是forEach
+        fruits.forEach(myFunction);
+        text += "</ul>";
+
+        text += "fruits数组长度: " + fruits.length + "<br>"
+
+        text += fruits.concat(arr2)
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+
+        // 如何识别数组?
+        text +="<br>";
+        text +=typeof fruits;  //object
+        text +="<br>";
+
+        // 问题在于 JavaScript 运算符 typeof 返回 "object"：
+        // 为了解决这个问题，ECMAScript 5 定义了新方法 Array.isArray()：
+        text += Array.isArray(fruits);
+
+        document.getElementById("demo").innerHTML = text;
+    </script>
+
+</body>
+
+</html>

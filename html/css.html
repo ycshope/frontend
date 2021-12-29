@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS 入门</title>
+    <!--内敛式CSS-->
+    <style>
+        /* 元素(标签)选择器 */
+        body {background-color:darkgreen} /* 背景样式 */
+        h1 {text-align:center; color:red} /*文本样式*/
+        p {font-weight: bolder} /*字体样式*/
+
+        /* 类选择器 */
+        .footer {color: red;font-size:x-large}
+        
+        /* 后代选择器 包括子孙*/
+        .footer p {color:black}
+
+        /* 子选择器   注意修饰的顺序是从上往下 */
+        .share > p {color:white}
+
+        /* 通配符选择器 删除内外边距*/
+        * {margin:0 ; padding:0}
+
+        /* id选择器 */
+        #main {background-color:white; font-size:16px} 
+
+        /* 群组选择器 */
+        .test1 , .test2 {text-align:right}
+
+        /* 背景选择器 */
+        .mainbody {
+            background-image: url("../img/CSS.png");
+            background-repeat: no-repeat;
+            /* 相对于坐上交的位置,x,y轴 */
+            background-position: center 5px;
+            /* 长背景,固定不动 */
+            background-attachment: fixed;
+        }
+
+        /* 文字选择 */
+        .color{color:yellow}
+        .letter{letter-spacing: 30px}
+        .word{word-spacing: 30px}
+        .line{line-height: 400%}
+        .align{text-align: center}
+        .deco{text-decoration: underline}
+        .indent{text-indent: 30px}
+        .transform{text-transform: capitalize}
+
+        /* 字体选择 */
+        .family{font-family: Times,serif;}
+        .size{font-size: 300%;}
+        .weight{font-weight: bolder;}
+        .style{font-style: italic;}
+
+        /* 链接------------------------------------------重点 */
+        /* 定义顺序必须时 link->visited->hover->active ,一般会可以只用hover和acive*/
+        a:link {color:blue;}    /*访问前*/
+        a:visited {color:blue;} /*访问后*/
+        a:hover {color:yellow;} /*鼠标悬浮*/
+        a:active {color:red;}   /*点击时*/
+        p.box1:hover {color:yellow;} /*鼠标悬浮  通过css来访问 也可以写成  .box1:hover {color:yellow;}*/
+
+        /* 盒子------------------------------------------重点 */
+        a , .box1 
+        {
+            display: block; /*a标签不是盒子,需要转换成盒子; div标签时盒子不需要转换；盒子最明显的标志就是可以调整长度和宽度*/
+            width: 100px; /*设置盒子的款度*/    
+            height: 30px; /*设置盒子的高度*/    
+            border: 1px solid red; /*设置盒子的边框(pading到margin通过border来隔离)为1,实线,红色 */ 
+            padding: 4px 6px; /*设置盒子的内边距(element到border的距离)y轴为4px,x轴为6px */ 
+            margin: 5px 0; /*外边距(element之间的距离)之间的距离y是1px,x是0 */ 
+           
+            text-align: center;
+        }
+
+        /* 位置------------------------------------------重点 */
+        /* 盒子本体 */
+        .pos_body{
+            position: relative;
+            width: 800px;
+            height: 500px;
+            border: 1px  solid yellow;
+            margin: 0 auto;  /* 盒子的左右自动剧中 */
+        }
+        /* 内盒子 */
+        .left{
+            position: absolute;
+            width: 200px;
+            right: 200px;
+            border: 1px blue solid;
+            left:0; /*左边顶格*/
+            top:0; /*最上顶格*/
+            text-align: center;
+            padding: 100px 6px;
+        }
+        .right{
+            position: absolute;
+            width: 200px;
+            right: 200px;
+            border: 1px blue solid;
+            right:0; /*左边顶格*/
+            top:0; /*最上顶格*/
+            text-align: center;
+            padding: 100px 6px;
+
+        }
+        .site_body{
+            position:fixed;
+            top:50%;
+            right:0px;
+            z-index:1;
+            width: 240px;
+            height: 30px;
+            border: 1px red solid;
+            text-align: center;
+            padding: 4px 6px;
+        }
+
+        /* 浮动------------------------------------------重点 */
+        /* 盒子本体 */
+        .f_body{
+            position: relative;
+            width: 100%;
+            height: 1200px;
+            border: 1px  solid red;
+            margin: 0 auto;  /* 盒子的左右自动剧中 */
+        }
+        /* 内盒子 */
+        .f_left{
+            width: 20%;
+            height: 1000px;
+            border: 1px blue solid;
+            float: left;    /*浮动,左边 */
+            text-align: center;
+            padding: 100px 6px;
+        }
+        .f_center{
+            width: 56.9%;
+            border: 1px blue solid;
+            height: 1000px;
+            float: left;    /*浮动,左边 */
+            text-align: center;
+            padding: 100px 6px;
+        }
+        .f_right{
+            width: 20%;
+            border: 1px blue solid;
+            height: 1000px;
+            float: right;  /*浮动,右边 */
+            text-align: center;
+            padding: 100px 6px;
+
+        }
+    </style> 
+</head>
+<body>
+<div class="header">
+    <!--嵌入式CSS-->
+    <h1 style="background-color:salmon ; color:darkgreen">内联式优先级高于嵌入式,会替代嵌入式的样式</h1>
+    <div class="logo"></div>
+    <div class="nav"></div>
+    <div class="login"></div>
+</div>
+
+<div class="mainbody" style="background-color:green"> 
+    <!-- css的继承属性,里面所有的背景颜色被继承green -->
+    <p style="color:red">
+        <a href="http://www.baidu.com"  target="_blank">嵌入式CSS</a>
+    </p>
+    <div class="aside"></div>
+    <div class="main">
+        <div id="main">id选择器用#选择</div>
+    </div>
+    <div class="test1">
+        <p>群组选择器</p>
+    </div>
+    <div class="test2">
+        <p>群组选择器</p>
+    </div>
+
+    <!--  文字选择  -->
+    <p class="color">文本颜色</p>
+    <p class="letter">字母间隔 字母间隔</p>
+    <p class="word">字符间距 字符间距</p>
+    <p class="line">行间距</p>
+    <p class="line">行间距</p>
+    <p class="align">对齐</p>
+    <p class="deco">修饰</p>
+    <p class="indent">缩进</p>
+    <p class="transform">大小写 hello wolrd!</p>
+
+    <!-- 字体选择 -->
+    <div class="font">
+        <h1>字体</h1>
+        <p class="family">字体系列</p>
+        <p class="size">字体大小</p>
+        <p class="weight">字体粗细</p>
+        <p class="style">字符风格</p>
+    </div>
+
+
+    <!-- css连接/盒子 -->
+    <div class="link">
+        <h1>CSS连接/盒子</h1>
+        <p class="box1">首页</p>
+        <p class="box1">HTML</p>
+        <p><a>CSS</a></p>
+        <p><a>JS</a></p>
+    </div>
+
+    <!-- css位置 -->
+    <div class="position">
+        <div class="pos_body">
+            <div class="left">左边框(绝对定位)</div>
+            <div class="right">右边框(绝对定位)</div>
+        </div>
+        <div class="site_body">
+            <div>z-index控制图层位置</div>
+        </div>
+    </div>
+
+    <!-- css位置 -->
+    <div class="float">
+        <div class="f_body">
+            <div class="f_left">左边框(浮动),float:right</div>
+            <div class="f_center">中间框(浮动),由于float有自动对齐功能,所以也是float:right</div>
+            <div class="f_right">右边框(浮动),float:left</div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="copyright"><small>@百度科技</small></div>
+    <div class="url">
+        <!-- span标签横轴对齐 -->
+        <span>www.baidu.com</span>
+        <span>www.bilibili.com</span>
+    </div>
+    <p>子选择器外</p>
+    <div class="share">
+        <p>子选择器内</p>
+        <p>子选择器内</p>
+    </div>
+</div>
+</body>
+</html>

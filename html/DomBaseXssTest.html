@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+        function test(){
+            var str =document.getElementById("text").value;
+            document.getElementById("t").innerHTML="<a href='"+str+"'>testLink</a>"
+        }
+        fun
+    </script>
+</head>
+    <body>
+        <!-- chrome会过滤script脚本 -->
+        <!-- <div id="t"><a href=''></a><script>alert('xss')</script><a href=''>testLink</a></div> -->
+        <!-- 正解方法1. ' onclick=alert('xss')// -->
+        <!-- <div id="t"><a href='' onclick=alert('xss')//'>testLink</a></div> -->
+        <div id="t"></div>
+        <input type="text" id="text" value="" />
+        <input type="button" id="s" value="write" onclick="test()" />
+        <input id=1 type="text" value="" />
+        xxxxxxxxxxxxx
+        <input id=2 type="text" value="" />
+        <script>
+            window.name="test";
+            // alert(document.domain+" "+window.name);
+            // window.location="https://baidu.com";
+            $var = 1
+        </script>
+        <video src="https://www.bilibili.com/video/BV19v411M7Rs?spm_id_from=333.851.b_7265636f6d6d656e64.1"
+        onloadeddata="alert(document.cookie);" ondurationchange="alert('xss2');"
+        ontimeupdate="alert('xss');" tabindex="0"></video>
+        <a href=# onclick="alert('$var');">test</a>
+    </body>
+</html>

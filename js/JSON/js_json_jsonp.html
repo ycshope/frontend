@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+  <h1>点击按钮</h1>
+
+  <p>将创建一个带有 src 属性的 script 标签并将其放在文档中。</p>
+
+  <p>PHP 文件以 JSON 对象作为参数返回对函数的调用。</p>
+
+  <button onclick="clickButton()">单击我！</button>
+
+  <p id="demo"></p>
+
+  <script>
+
+    // JSONP 是一种无需考虑跨域问题即可传送 JSON 数据的方法。
+
+    // JSONP 不使用 XMLHttpRequest 对象。
+
+    // 从另一个域请求文件会引起问题，由于跨域政策。
+
+    // 从另一个域请求外部脚本没有这个问题。
+
+    // JSONP 利用了这个优势，并使用 script 标签替代 XMLHttpRequest 对象。
+    function clickButton() {
+      var s = document.createElement("script");
+      s.src = "./demo_php_jsonp.php";
+      document.body.appendChild(s);
+    }
+    function myFunc(myObj) {
+      document.getElementById("demo").innerHTML = myObj.name;
+    }
+  </script>
+
+  <!-- 等價寫法 -->
+  <!-- <script src="./demo_php_jsonp.php"></script> -->
+
+</body>
+
+</html>

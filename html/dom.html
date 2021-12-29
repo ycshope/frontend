@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <!-- document objection model -->
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="../img/logo.png" alt="logo.html" width="10%" height="10%">
+    </div>
+    <div class="nav"></div>
+    <ul>
+        <li type="disc"><a href="#html">HTML</a></li>
+        <li type="disc"><a href="#css">CSS</a></li>
+        <li type="disc"><a href="#javascript">JavaScript</a></li>
+    </ul>
+    <div class="login">
+        <form action="login.php">
+            username: <input type="text" name="username">
+            password: <input type="password" name="password">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="aside"></div>
+    <div class="main">
+        <h1><a name="html">HTML</a></h1>
+    <img src="../img/html5.png" alt="HTML" target="_blank" width="5%" height="5%">
+    <p>超文本标记语言<i>（英语：HyperText Markup Language，简称：<a href="#"  target="_blank">HTML</a>）</i>是一种用于创建网页的标准标记语言。
+
+        您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。
+        
+        在本教程中，您将学习如何使用 HTML 来创建站点。
+        
+        HTML 很容易学习！相信您能很快学会它！</p>
+
+    <h1><a name="css">CSS</a></h1>
+    <img src="../img/CSS.png" alt="HTML" target="_blank">
+    <p><a href="#"  target="_blank">CSS</a> 是一种描述 <em>HTML 文档样式的语言。</em>
+
+        CSS 描述应该如何显示 HTML 元素。
+        
+        本教程将从零起点的基础教程开始，一直到 CSS3 高级教程，为您提供全面系统地讲解。</p>
+
+    <h1><a name="javascript">JavaScript</a></h1>
+    <p>
+        <img src="../img/JavaScript.png" alt="javas" target="_blank"  width="5%" height="5%">
+        <a href="#"  target="_blank">JavaScript</a><em>（简称“JS”）</em> 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。是一种用于创建网页的标准标记语言。
+    </p>
+    </div>
+</div>
+<div class="footer">
+    <div class="copyright"><small>@百度科技</small></div>
+    <div class="url"></div>
+    <div class="share"></div>
+</div>
+</body>
+<h1 id="dom"><a href="https://www.w3school.com.cn/htmldom/index.asp" target="_blank">通过dom访问</a></h1>
+<script>
+    var a=document.getElementsByClassName("mainbody");
+    document.write("通过getElementsByClassName获取到的内容是:   "+a+"<br>");
+
+    var b=a[0].getElementsByTagName("p")[0];
+    document.write("通过getElementsByTagName获取到的内容是:      "+b.innerHTML+"<br>");
+
+    var c=document.getElementById("dom");
+    document.write("通过getElementsById获取到的内容是:   "+c.innerHTML+"<br>");
+</script>
+
+<h1>通过DOM修改HTML属性</h1>
+<p id="dom1">id为dom1</p>
+<p id="dom2">id为dom2</p>
+<script>
+    var d=document.getElementById("dom1");
+    //拿到标签直接赋值
+    d.style="color:blue";
+    //写法2
+    var e=document.getElementById("dom2");
+    e.style.color="green";
+</script>
+
+<h1>DOM事件</h1>
+<h2 onclick="this.innerHTML='点击成功'">onclick事件_1</h2>
+<h2 onclick="changetext(this)">onclick事件_2</h2>
+<h2 id="dom3">onclick事件_3</h2>
+<button id="mybtn">点击这里onclick事件_3变为时间</button>
+<h2 onmouseover="this.innerHTML='onmouseover'" onmouseout="this.innerHTML='onmouseout'" onclick="this.style.color='red'">事件4</h2>
+<h2 id="dom4">事件_5</h2>
+<button id="mybtn1">事件_5按钮</button>
+<script>
+    function changetext(id){
+        id.innerHTML="点击成功";
+    };
+
+    //事件3
+    document.getElementById("mybtn").onclick=function(){
+        displaydate();
+    };
+    function displaydate(){
+        document.getElementById("dom3").innerHTML=Date();
+    }; 
+
+    //事件5
+    document.getElementById("mybtn1").onclick=function(){
+        chick();
+    };
+    function chick(){
+        document.getElementById("dom4").style.color='red';
+        document.getElementById("dom4").innerHTML='click';
+    };
+    document.getElementById("mybtn1").onmouseover=function(){
+        on();
+    };
+    function on(){
+        document.getElementById("dom4").innerHTML='on';
+    };
+    document.getElementById("mybtn1").onmouseout=function(){
+        out();
+    };
+    function out(){
+        document.getElementById("dom4").innerHTML='out';
+    };
+</script>
+</html> 

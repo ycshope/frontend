@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title></title>
+    <h1></h1>
+    <div id="body">
+        <div id="demo1">
+        <div id="demo2">
+    </div>
+    <script>
+        var a = 'JavaScript';
+        var b = "Html";
+        var c = a.toUpperCase();
+        var d = b.toLowerCase();
+        document.write(c + '<br>');
+        document.write(d + '<br>');
+
+        function GetMail() {
+            var mail = "mili@qq.com"; //强制要求用户输入的框
+            var pos = mail.indexOf("@");  //获取@字符的位置
+            var name = mail.slice(0, pos);    //获取开头到pos的字符
+            var address = mail.substr(pos + 1);  //获取pos之后的字符串
+            document.write("you username is" + name + '<br>');
+            document.write("you email is " + address + '<br>')
+        }
+        GetMail(); //执行函数
+
+        //获取文件后缀名
+        var url = "https://www.baidu.com/login.php";
+        function GetFileFromat(url) {
+            var pos = url.lastIndexOf('.');  //寻找最后一个.
+            return url.substr(pos + 1);   //通过substr返回后缀名
+        }
+        var filefromat = GetFileFromat(url);
+        document.write(url + "文件后缀名为" + filefromat);
+
+        function trim_and_replace(s1)
+        {
+            // trim() 方法删除字符串两端的空白符：
+            document.write(s1.trim());
+
+            //只能替换其中一个,替换所有用正则
+            document.write(s1.replace("php","Python"));
+        }
+        var s1 = "   this is phpphp  ";
+        document.write("<br>")
+        trim_and_replace(s1)
+
+        var str = "HELLO WORLD";
+        // 这是两个提取字符串字符的安全方法：
+        // charAt() 方法返回字符串中指定下标（位置）的字符串：
+        // charCodeAt() 方法返回字符串中指定索引的字符 unicode 编码：
+        function SecGetString(str)
+        {
+            document.write(str.charAt(0)); //H
+            document.write(str.charCodeAt(0)); //72
+        }
+        SecGetString(str)
+    </script>
+</body>
+
+</html>

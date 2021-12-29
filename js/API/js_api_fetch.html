@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo">获取文件以更改此文本。</p>
+
+    <script>
+        // Fetch API 接口允许 Web 浏览器向 Web 服务器发出 HTTP 请求。
+
+        // 不再需要 XMLHttpRequest。
+        // 可能會被同源策略給禁止
+        getText("./js_api_fetch.html");
+
+        async function getText(file) {
+            let x = await fetch(file);
+            let y = await x.text();
+            document.getElementById("demo").innerHTML = y;
+        }
+    </script>
+
+</body>
+
+</html>

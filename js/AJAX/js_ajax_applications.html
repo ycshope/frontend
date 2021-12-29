@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body>
+
+    <button type="button" onclick="loadXMLDoc()">获取我的音乐列表</button>
+    <br><br>
+    <table id="demo"></table>
+    <div id='showMUSIC'></div>
+    <input type="button" onclick="previous()" value="previous">
+    <input type="button" onclick="next()" value="next">
+
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    loadList(this);
+                }
+            };
+            xmlhttp.open("GET", "/music_list.xml", true);
+            xmlhttp.send();
+        }
+        function loadList(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>艺术家</th><th>曲目</th></tr>";
+            var x = xmlDoc.getElementsByTagName("TRACK");
+            for (i = 0; i < x.length; i++) {
+                // 點擊會顯示詳細
+                table += "<tr onclick=displayMUSIC(" + i + ")><td>" +
+                    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+
+        //點擊獲取音樂詳細信息
+        function displayMUSIC(i) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    loadDetail(this, i);
+                }
+            };
+            xmlhttp.open("GET", "/music_list.xml", true);
+            xmlhttp.send();
+        }
+
+        function loadDetail(xml, i) {
+            var xmlDoc = xml.responseXML;
+            x = xmlDoc.getElementsByTagName("TRACK");
+            document.getElementById("showMUSIC").innerHTML =
+                "<ul>" +
+                "<li>曲目：" +
+                x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</li>" +
+                "<li>艺术家：" +
+                x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</li>" +
+                "<li>专辑：" +
+                x[i].getElementsByTagName("ALBUM")[0].childNodes[0].nodeValue + "</li>" +
+                "<li>国家：" +
+                x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue + "</li>" +
+                "<li>公司：" +
+                x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue + "</li>" +
+                "<li>年份：" +
+                x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue + "</li>" +
+                "</ul>";
+        }
+
+        function next() {
+            if (i < len - 1) {
+                i++;
+                displayMUSIC(i);
+            }
+        }
+
+        function previous() {
+            if (i > 0) {
+                i--;
+                displayMUSIC(i);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

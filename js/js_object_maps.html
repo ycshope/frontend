@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title></title>
+    <h1></h1>
+    <div id="body">
+        <a id="demo1" href="https://www.w3school.com.cn/js/js_object_maps.asp">詳情</a>
+        
+    </div>
+    <script>
+        // 	        对象	                            Map
+        // Size	    对象没有 size 属性	            Maps 有 size 属性
+        // 键类型	对象键必须是字符串（或符号）	    Map 键可以是任何数据类型
+        // 键顺序	对象键没有很好地排序	            Map 键按插入排序
+        // 默认	    对象有默认键	                 Map 没有默认键
+
+
+        // 创建对象
+        const apples = { name: 'Apples' };
+        const bananas = { name: 'Bananas' };
+        const oranges = {name: 'Oranges'};
+
+        // 创建新的 Map
+        const fruits = new Map([
+            [apples, 500],
+            [bananas, 300],
+        ]);
+
+        // 为 Map 对象中的键设置值。
+        fruits.set(oranges, 200);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript <b>this</b> 关键词</h1>
+
+    <p>在本例中，<b>this</b> 引用 window 对象：</p>
+    <p id="demo1"></p>
+
+
+    <p>在本例中，<strong>this</strong> 引用 person2，即使它是 person1 的方法：</p>
+    <p id="dem2"></p>
+
+    <!-- 事件处理程序中的 this -->
+    <button onclick="this.style.display='none'">单击来删除我！</button>
+
+    <script>
+        var x = this;
+        // 在单独使用时，拥有者是全局对象，因此 this 指的是全局对象。
+
+        // 在浏览器窗口中，全局对象是 [object Window]：
+        document.getElementById("demo1").innerHTML = x;
+
+        // 显式函数绑定
+        // call() 和 apply() 方法是预定义的 JavaScript 方法。
+        // 它们都可以用于将另一个对象作为参数调用对象方法。
+        // 您可以在本教程后面阅读有关 call() 和 apply() 的更多内容。
+        // 在下面的例子中，当使用 person2 作为参数调用 person1.fullName 时，this 将引用 person2，即使它是 person1 的方法：
+
+        var person1 = {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        var person2 = {
+            firstName: "Bill",
+            lastName: "Gates",
+        }
+        var x = person1.fullName.call(person2);  //調用對象person2的
+        document.getElementById("demo2").innerHTML = x;
+    </script>
+
+</body>
+
+</html>

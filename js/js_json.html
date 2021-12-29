@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>用 JSON 字符串创建对象</h1>
+
+<p id="demo"></p>
+
+<script>
+    // JSON 指的是 JavaScript Object Notation
+var text = '{"employees":[' +
+'{"firstName":"Bill","lastName":"Gates" },' +
+'{"firstName":"Steve","lastName":"Jobs" },' +
+'{"firstName":"Elon","lastName":"Musk" }]}';
+
+obj = JSON.parse(text);//把这个字符串转换为 JavaScript 对象
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+</body>
+</html>

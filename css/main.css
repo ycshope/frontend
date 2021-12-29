@@ -1,0 +1,49 @@
+body {background-color:gray}
+.main{
+    position: relative;
+    width: auto;
+    height: 1500px;
+    border: 1px  solid gray;
+    margin: 0 auto;  /* 盒子的左右自动剧中 */
+}
+/* 内盒子 */
+.left{
+    position: absolute;
+    width: 20%;
+    right: 200px;
+    height: 1500px;
+    /* border: 1px blue solid; */
+    left:0; /*左边顶格*/
+    top:0; /*最上顶格*/
+    text-align: center;
+    padding: 100px 6px;
+}
+.right{
+    position: absolute;
+    width: 20%;
+    right: 200px;
+    height: 300px;
+    /* border: 1px blue solid; */
+    right:0; /*左边顶格*/
+    top:0; /*最上顶格*/
+    text-align: center;
+    padding: 100px 6px;
+
+}
+.mid{
+    background-color: white;
+    position: absolute;
+    width: 80%;
+    right: 200px;
+    height: 9000px;
+    border: 1px solid; 
+    left:100px; /*左边顶格*/
+    top:0px; /*最上顶格*/
+    text-align: left;
+    padding: 100px 50px;
+}
+
+.course{
+    float: left;
+    margin: 30px 15px;
+}

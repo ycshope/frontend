@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 类方法</h1>
+
+<p>如何定义和使用类方法。</p>
+
+<p id="demo"></p>
+
+<script>
+//     JavaScript 类不是对象,它只是 JavaScript 对象的模板。   ???啥意思
+class Car {
+    // constructor() :構造函數
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+</script>
+
+</body>
+</html>

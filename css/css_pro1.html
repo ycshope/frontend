@@ -1,0 +1,112 @@
+<!--
+    WEB项目流程:
+        1.先通过DIV进行排版,将不同内容隔离在不同的DIV块中;
+        2.未每个独立的DIV模块里面,填充HTML内容(h/p/a/img/table/form);
+        3.为了让页面更好看,引入CSS样式
+        5.为了让页面更酷炫,引入JavaScript脚本
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>W3school</title>
+    <link rel="icon" href="../img/coin.png" width="10%" height="10%">
+    <style>
+        /* CSS模板:从大到小写! 其他编程也是! 这样写逻辑会清晰很多!!--------------非常重要  */
+
+        /*全局*/
+        * {
+            margin: 0;
+            padding: 0;
+            }
+
+        /* 设置导航栏模式 */
+        .header {
+            margin: 0; /* 消除边距 */
+            padding: 0; /* 消除内边框 */
+            height: 56px; /* 高度 */
+            width: 100%; /* 设置导航栏宽度(辅助浏览器)*/
+            /* background-color: #212121; 设置导航栏的背景颜色  */
+        }
+
+        /* 设置头部样式 */
+        .header > a{
+            display: block;
+            float: left;
+            margin: 6px 30px; /*设置边框是为了让浮动不会堆在一起-----------------重要*/
+        }
+
+        /* 设置logo样式 */
+        .logo {
+            float: left;
+            }
+
+        /*  设置导航栏样式*/
+        .nav {
+            float: left; /* 向左浮动 */
+            line-height: 56px; /* 设置垂直居中对齐 */
+            margin-left: 10px; /* 设置左外边距 */
+        }
+
+        .nav > a{
+            display: block;  /* 设置为块 */
+            float: left; /* 向左浮动 */
+            margin: auto 6px;
+            text-decoration: none;
+            /* padding: 0 3px; */
+        }
+        .nav > a:hover{
+            background-color:cornflowerblue;
+        }
+        
+        /* 设置登录注册按钮样式 */
+        .login {
+            float:right; /* 设置向右浮动 */
+            line-height: 56px;/* 设置垂直居中对齐--行与行之间的间距 */
+            position: relative; /* 设置相对定位*/
+            right: 20px;
+
+        }
+
+        .login > a{
+            text-decoration:none;
+            float:right;
+            margin: auto 6px;
+            text-decoration: none;
+        }
+
+        .login > a:hover{
+            background-color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <a href="https://www.w3school.com.cn/htmldom/index.asp"><img src="../img/csdn.png"  width="100%" height="100%"></a>
+    </div>
+    <div class="nav">
+        <a href="#" class="HTML_CSS">HTML/CSS</a>
+        <a href="#" class="Browser_Side">Browser Side</a>
+        <a href="#" class="Server_Side">Server Side</a>
+        <a href="#" class="Programming">Programming</a>
+        <a href="#" class="XML">XML</a>
+        <a href="#" class="Web_Building">Web Building</a>
+        <a href="#" class="Reference">Reference</a>
+    </div>
+    <div class="login">
+        <a href="#" class="Log_In">Log In</a>
+        <a href="#" class="Register">Register</a>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="aside"></div>
+    <div class="main"></div>
+</div>
+<div class="footer">
+    <div class="copyright"></div>
+    <div class="url"></div>
+    <div class="share"></div>
+</div>
+</body>
+</html>

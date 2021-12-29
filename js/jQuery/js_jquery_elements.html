@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <h1>获取文本内容</h1>
+
+    <h2 id="01">Hello World!</h2>
+    <h2 id="02">Hello China!</h2>
+    <h2 id="03">Hello Shanghai!</h2>
+
+
+    <h1>设置 HTML</h1>
+
+    <div id="04">
+        <h2>Hello China!</h2>
+    </div>
+    <div id="05">
+        <h2>Hello World!</h2>
+    </div>
+    <p id="demo1"></p>
+
+    <script>
+        $(document).ready(function () {
+            var myElement = $("#03");
+            // 获取文本内容
+            var myText = myElement.text();
+            // js
+            // var myText = myElement.textContent || myElement.innerText;
+
+            // 设置文本内容
+            $("#demo1").text(myText);
+        });
+
+        $(document).ready(function () {
+            // 获取元素的 HTML 内容：
+            var content = $("#04").html();
+            // js
+            // var content = myElement.innerHTML;
+
+            // 设置 HTML 内容
+            $("#05").html(content);
+        });
+    </script>
+
+</body>
+
+</html>

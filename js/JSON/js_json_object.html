@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>JSON 对象</h1>
+
+  <p>如何遍历 JSON 对象中的所有属性。</p>
+
+  <p id="demo"></p>
+
+  <script>
+    var myObj, x;
+    myObj = { "name": "Bill Gates", "age": 62, "car": "BMW" };
+    // 刪除屬性
+    delete myObj.car;
+     // 您能够通过使用 for-in 遍历对象属性
+    for (x in myObj) {
+      document.getElementById("demo").innerHTML += x + "<br>";
+    }
+  </script>
+
+</body>
+
+</html>

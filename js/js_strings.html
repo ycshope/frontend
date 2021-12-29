@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 字符串</h1>
+
+<p>转义序列 \" 在字符串中插入双引号。</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+// 由于字符串必须由引号包围，JavaScript 会误解这段字符串：
+
+// 避免此问题的解决方法是，使用 \ 转义字符。
+var x = "中国是瓷器的故乡，因此 china 与\"China（中国）\"同名。";
+document.getElementById("demo").innerHTML = x; 
+  
+var x = "Bill";              // x 是字符串
+var y = new String("Bill");  // y 是对象
+
+document.getElementById("demo2").innerHTML = (x==y); //值相同
+document.getElementById("demo3").innerHTML = (x===y); //类型不同
+</script>
+
+</body>
+</html>

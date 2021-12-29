@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>此页面上的脚本启动这个时钟：</p>
+
+    <p id="demo"></p>
+
+    <button onclick="clearInterval(myVar)">停止时间</button>
+
+    <script>
+        // setInterval() 方法在每个给定的时间间隔重复给定的函数。
+        // window.setInterval(function, milliseconds);
+        var myVar = setInterval(myTimer, 1000);
+        function myTimer() {
+            var d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+
+</body>
+
+</html>

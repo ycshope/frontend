@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script>
+        // AJAX 用于创建更具交互性的应用程序
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                };
+                // 同源策略阻擋
+                xmlhttp.open("GET", "gethint.asp?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <p><b>请在下面的输入字段中键入字母 A-Z：</b></p>
+    <form>
+        姓名：<input type="text" onkeyup="showHint(this.value)">
+    </form>
+    <p>搜索建议：<span id="txtHint"></span></p>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title></title>
+    <h1>Window 对象</h1>
+    <div id="body">
+        <p>所有浏览器都支持 window 对象。它代表浏览器的窗口。</p>
+        <p>所有全局 JavaScript 对象，函数和变量自动成为 window 对象的成员。</p>
+        <p>全局变量是 window 对象的属性。</p>
+        <p>全局函数是 window 对象的方法。</p>
+        <p>甚至（HTML DOM 的）document 对象也是 window 对象属性：</p>
+        <p id="demo1"></p>
+        <input type="button" value="打开窗口" onclick="openWin()" />
+        <br><br>
+        <input type="button" value="移动窗口" onclick="moveWin()" />
+        <br><br>
+        <button onclick="resizeWin()">调整窗口</button>
+        <br><br>
+        <button onclick="closeWin()">關閉窗口</button>
+    </div>
+    <script>
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+
+        var x = document.getElementById("demo1");
+        x.innerHTML = "浏览器内窗宽度：" + w + "，高度：" + h + "。";
+        // 其他窗口方法
+
+        function openWin() {
+            //打開窗口
+            myWindow = window.open('', '', 'width=200,height=100');
+            myWindow.document.write("<p>这是我的窗口</p>");
+        }
+
+        function moveWin() {
+            //移動窗口
+            myWindow.moveTo(0, 0);
+            myWindow.focus();
+        }
+
+        function resizeWin() {
+            //調整窗口
+            myWindow.resizeTo(500, 500);
+            myWindow.focus();
+        }
+
+        function closeWin() {
+            //關閉窗口
+            myWindow.close();
+        }
+    </script>
+    </script>
+</body>
+
+</html>

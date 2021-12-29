@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title></title>
+    <h1></h1>
+    <div id="body">
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+    </div>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            language: "EN"
+        };
+
+
+        //ref : https://www.w3school.com.cn/js/js_object_es5.asp
+        
+        // 添加或更改对象属性
+        Object.defineProperty(person, "language", { value: "NO" });
+        //{"firstName":"John","lastName":"Doe","language":"NO"}
+        document.getElementById("demo1").innerHTML = JSON.stringify(person);
+
+        // 添加或更改对象属性
+        // writable : true      // 属性值可更改
+        // enumerable : true    // 属性可枚举
+        // configurable : true  // 属性可重新配置
+        Object.defineProperty(person, "language", { enumerable: false });
+
+        // 以数组返回所有属性
+        // firstName,lastName,language
+        document.getElementById("demo2").innerHTML = Object.getOwnPropertyNames(person);
+
+        // 返回可枚举属性的数组
+        //firstName,lastName;
+        document.getElementById("demo3").innerHTML = Object.keys(person);
+
+
+        // 如果属性可以添加到对象，则返回 true
+        console.log(Object.isExtensible(person));
+        // 添加属性,並返回一個對象
+        
+        //{firstName: 'John', lastName: 'Doe', language: 'NO', year: '2008'}
+        Object.defineProperty(person, "year", { value: "2008" });
+
+
+    </script>
+</body>
+
+</html>

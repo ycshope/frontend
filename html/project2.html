@@ -1,0 +1,67 @@
+<!--
+    WEB项目流程:
+        1.先通过DIV进行排版,将不同内容隔离在不同的DIV块中;
+        2.未每个独立的DIV模块里面,填充HTML内容(h/p/a/img/table/form);
+        3.为了让页面更好看,引入CSS样式
+        5.为了让页面更酷炫,引入JavaScript脚本
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SECOND HTML PROJECT</title>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="../img/logo.png" alt="logo.html" width="10%" height="10%">
+    </div>
+    <div class="nav"></div>
+    <ul>
+        <li type="disc"><a href="#html">HTML</a></li>
+        <li type="disc"><a href="#css">CSS</a></li>
+        <li type="disc"><a href="#javascript">JavaScript</a></li>
+    </ul>
+    <div class="login">
+        <form action="login.php">
+            username: <input type="text" name="username">
+            password: <input type="password" name="password">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="aside"></div>
+    <div class="main">
+        <h1><a name="html">HTML</a></h1>
+    <img src="../img/html5.png" alt="HTML" target="_blank" width="5%" height="5%">
+    <p>超文本标记语言<i>（英语：HyperText Markup Language，简称：<a href="#"  target="_blank">HTML</a>）</i>是一种用于创建网页的标准标记语言。
+
+        您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。
+        
+        在本教程中，您将学习如何使用 HTML 来创建站点。
+        
+        HTML 很容易学习！相信您能很快学会它！</p>
+
+    <h1><a name="css">CSS</a></h1>
+    <img src="../img/CSS.png" alt="HTML" target="_blank">
+    <p><a href="#"  target="_blank">CSS</a> 是一种描述 <em>HTML 文档样式的语言。</em>
+
+        CSS 描述应该如何显示 HTML 元素。
+        
+        本教程将从零起点的基础教程开始，一直到 CSS3 高级教程，为您提供全面系统地讲解。</p>
+
+    <h1><a name="javascript">JavaScript</a></h1>
+    <p>
+        <img src="../img/JavaScript.png" alt="javas" target="_blank""  width="5%" height="5%">
+        <a href="#"  target="_blank">JavaScript</a><em>（简称“JS”）</em> 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。是一种用于创建网页的标准标记语言。
+    </p>
+    </div>
+</div>
+<div class="footer">
+    <div class="copyright"><small>@百度科技</small></div>
+    <div class="url"></div>
+    <div class="share"></div>
+</div>
+</body>
+</html>

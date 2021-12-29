@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>请输入 5 到 10 之间的数字：</p>
+    <!--
+用法: 
+try {
+    供测试的代码块
+}
+catch(err) {
+    处理错误的代码块
+} 
+finally {
+    无论 try / catch 结果如何都执行的代码块
+} 
+
+Error 对象的屬性：name 和 message。
+-->
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">检测输入</button>
+
+    <p id="p01"></p>
+
+    <script>
+        function myFunction() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo").value;
+            try {
+                //throw 语句允许您创建自定义错误。
+                if (x == "") throw "是空的";
+                if (isNaN(x)) throw "不是数字";
+                x = Number(x);
+                if (x > 10) throw "太大";
+                if (x < 5) throw "太小";
+            }
+            catch (err) {
+                message.innerHTML = "输入：" + err;
+            }
+            finally {
+                document.getElementById("demo").value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

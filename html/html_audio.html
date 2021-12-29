@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML 音频</title>
+        <!-- 
+            方法有很多如:
+            embed,object,a,ifrname但是这里推荐用h5的audio
+         -->
+    </head>
+    <body>
+            <h1>audio</h1>
+            <audio controls="controls" height="100" width="100">
+                <source src="song.mp3" type="audio/mp3" />
+                <source src="song.ogg" type="audio/ogg" />
+              <embed height="100" width="100" src="song.mp3" />
+              </audio>
+            <p>上面的例子使用了两个不同的音频格式。HTML5 audio 元素会尝试以 mp3 或 ogg 来播放音频。如果失败，代码将回退尝试 embed 元素。</p>
+    </body>
+</html>

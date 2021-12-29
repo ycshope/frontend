@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JSON.stringify 会删除对象中的任何函数</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        // JSON 的常规用途是同 web 服务器进行数据交换。
+        // 在向 web 服务器发送数据时，数据必须是字符串。
+        // 通过 JSON.stringify() 把 JavaScript 对象转换为字符串。
+        var obj = { name: "Bill Gates", age: function () { return 62; }, city: "Seattle" };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
+
+</body>
+
+</html>

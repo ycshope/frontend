@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BOM</title>
+    <!-- brower objections model -->
+</head>
+
+<body>
+
+    <div>
+        <h1>手机号码判断</h1>
+        <div>
+            <div class="box">
+                <div class="tel">
+                    <input type="text" id="tel" placeholder="please enther your telphone number in here">
+                </div>
+                <div class="tip" id="tip">
+                    tel must eleven number
+                </div>
+            </div>
+            <style>
+                .tel,
+                .tip {
+                    float: left;
+                    margin: 10px;
+                }
+
+                .tip {
+                    display: none;
+                    color: red;
+                }
+            </style>
+
+            <script>
+                // windows.onload && windows.onblur测试
+                window.onload = function () {
+                    var tel = document.getElementById("tel");
+                    var tip = document.getElementById("tip");
+                    tel.onfocus = function () {
+                        tip.style.display = "block";
+                    }
+                    tel.onblur = function () {
+                        if (tel.value.length == 11 && isNaN(tel.value) == false) {
+                            tip.style.color = "green";
+                            tip.innerHTML = "met";
+                        }
+                        else if (tel.value.length == 0) {
+                            tip.style.color = "red";
+                            tip.innerHTML = "please enter your tel";
+                        }
+                        else if (isNaN(tel.value) == true) {
+                            tip.style.color = "red";
+                            tip.innerHTML = "tel must be number!";
+                        }
+                        else {
+                            tip.style.color = "red";
+                            tip.innerHTML = "tel must be eleven number!";
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

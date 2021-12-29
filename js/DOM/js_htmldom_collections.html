@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript HTML DOM</h1>
+
+    <p>Hello World!</p>
+
+    <p>Hello China!</p>
+
+    <p>单击按钮可更改所有 p 元素的颜色。</p>
+
+    <button onclick="myFunction()">试一试</button>
+
+    <script>
+        // HTMLCollection 对象
+        // getElementsByTagName() 方法返回 HTMLCollection 对象。
+        // HTMLCollection 对象是类数组的 HTML 元素列表（集合）。
+
+        // HTMLCollection 并非数组！
+        // HTMLCollection 也许看起来像数组，但并非数组。
+
+        // 您能够遍历列表并通过数字引用元素（就像数组那样）
+        function myFunction() {
+            var myCollection = document.getElementsByTagName("p");
+            console.log(myCollection.length);
+            var i;
+            for (i = 0; i < myCollection.length; i++) {
+                myCollection[i].style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body id="body">
+    <!-- <article> <svg/onload=alert('xss')</article> -->
+</body>
+<script>
+     input = "<svg/onload=alert('xss') ";
+    var body = document.getElementById("body");
+    body.innerHTML = escape(input);
+    function escape(input) {
+        // tags stripping mechanism from ExtJS library
+        // Ext.util.Format.stripTags
+        // 替換掉大部分特殊字符
+        //爲什麽不能替換??
+        var stripTagsRE = /<\/?[^>]+>/gi;
+        input = input.replace(stripTagsRE, '');
+        console.log(input);
+        return '<article>' + input + '</article>';
+    }
+
+</script>
+
+</html>
+
+

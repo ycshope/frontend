@@ -1,0 +1,18 @@
+<button onclick="back()">后退</button>
+<button onclick="go()">后退兩頁</button>
+
+<script>
+    // Web History API 提供了访问 windows.history 对象的简单方法。
+    // window.history 对象包含用户访问过的 URL（网站）。
+
+    function back() {
+        //默認後退一頁
+        window.history.back();
+    }
+
+    function go() {
+        window.history.go(-2);
+    }
+    // forward()加载历史列表中的下一个 URL。
+    // length	返回历史列表中的 URL 数量。
+</script>

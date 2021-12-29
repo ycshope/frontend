@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>XMLHttpRequest 对象</h1>
+
+    <button type="button" onclick="loadDoc()">请求数据</button>
+
+    <p id="demo"></p>
+
+    <script>
+        // XMLHttpRequest 对象用于同服务器交换数据。
+        // 同步 XMLHttpRequest 正在从 Web 标准中移除，但是这个过程可能需要很多年。
+        function loadDoc() {
+            // 通过 XMLHttpRequest 对象，您可以定义当请求接收到应答时所执行的函数
+            var xhttp = new XMLHttpRequest();
+
+            // onreadystatechange	定义了当 readyState 属性发生改变时所调用的函数。
+            xhttp.onreadystatechange = function () {
+                // readyState保存了 XMLHttpRequest 的状态。
+                // 0: 请求未初始化
+                // 1: 服务器连接已建立
+                // 2: 请求已接收
+                // 3: 正在处理请求
+                // 4: 请求已完成且响应已就绪
+                if (this.readyState == 4 && this.status == 200) {
+                    // responseText	获取字符串形式的响应数据
+                    // responseXML	获取 XML 数据形式的响应数据
+                    document.getElementById("demo").innerHTML = this.responseText;
+
+                    // getAllResponseHeaders() 方法返回所有来自服务器响应的头部信息。
+                    // document.getElementById("demo").innerHTML = this.getAllResponseHeaders();
+                    // getResponseHeader() 方法返回来自服务器响应的特定头部信息。
+                    //  document.getElementById("demo").innerHTML = this.getResponseHeader("Last-Modified");
+                }
+            }
+        };
+        // 向服务器发送请求
+
+        //GET請求
+        // open(method, url, async)
+        xhttp.open("GET", "/demo/demo_get.asp?fname=Bill&lname=Gate", true);
+        // send()是get請求
+        xhttp.send();
+
+            //POST請求,并且填寫頭部
+            // xhttp.open("POST", "ajax_test.asp", true);
+            // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // xhttp.send("fname=Bill&lname=Gates");
+        }
+    </script>
+
+</body>
+
+</html>

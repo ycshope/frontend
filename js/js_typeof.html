@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript typeof</h2>
+    <!-- 在 JavaScript 中有 5 种不同的可以包含值的数据类型：
+
+string
+number
+boolean
+object
+function
+有 6 种类型的对象：
+
+Object
+Date
+Array
+String
+Number
+Boolean
+以及 2 种不能包含值的数据类型：
+
+null
+undefined 
+undefined 和 null 值相等但类型不同
+-->
+
+
+    <p id="demo"></p>
+
+
+    <script>
+        typeof "John"                 // 返回 "string"
+        typeof 3.14                   // 返回 "number"
+        typeof NaN                    // 返回 "number"
+        typeof false                  // 返回 "boolean"
+        typeof [1, 2, 3, 4]              // 返回 "object"
+        typeof { name: 'John', age: 34 }  // 返回 "object"
+        typeof new Date()             // 返回 "object"
+        typeof function () { }         // 返回 "function"
+        typeof myCar                  // 返回 "undefined" *
+        typeof null                   // 返回 "object"
+        document.getElementById("demo").innerHTML = html;
+    </script>
+
+</body>
+
+</html>

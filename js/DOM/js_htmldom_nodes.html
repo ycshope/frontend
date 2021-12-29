@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="div1">
+        <p id="p1">这是一段文字。</p>
+        <p id="p2">这是另一段文字。</p>
+    </div>
+
+    <script>
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p1");
+        // 創建新節點
+        var para = document.createElement("p");
+        // 創建新文本
+        var node = document.createTextNode("这是新的文本。");
+
+        // 將節點接入
+        para.appendChild(node);
+
+        // 替換子節點
+        parent.replaceChild(para, child);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        // AJAX 可用来与数据库进行交互式通信。
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "/php_ajax_database.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        <select name="users" onchange="showUser(this.value)">
+            <option value="">请选择一个客户：</option>
+            <option value="1">Alibaba</option>
+            <option value="2">APPLE</option>
+            <option value="3">BAIDU</option>
+            <option value="4">Canon</option>
+            <option value="5">Google</option>
+            <option value="6">HUAWEI</option>
+            <option value="7">Microsoft</option>
+            <option value="8">Nokia</option>
+            <option value="9">SONY</option>
+            <option value="10">Tencent</option>
+        </select>
+    </form>
+    <br>
+
+    <div id="txtHint"><b>客户信息将在此处列出。</b></div>
+
+</body>
+
+</html>

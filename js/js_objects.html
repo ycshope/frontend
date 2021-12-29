@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript 对象创建</h1>
+
+<p id="demo"></p>
+
+<script>
+// 创建对象：
+var person = {
+    firstName : "Bill",
+    lastName  : "Gates",
+    age       : 62,
+    eyeColor  : "blue",
+    // 定义方法
+    action :function(){
+        return "我已经会走路了!"
+    }
+};
+
+// 显示对象中的数据 ,两种访问方式
+document.getElementById("demo").innerHTML =
+person.firstName + " 已经 " + person["age"] + " 岁了。" + person.action();
+</script>
+
+</body>
+</html>

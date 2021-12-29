@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>let和var</h1>
+    <div id="body">
+    </div>
+    <script>
+        //var相当于全局变量,如果在函数内部定义,那么作用域也仅限于函数内
+        var x = 10;
+        // 此处 x 为 10
+        {
+            let x = 6;
+            // 此处 x 为 6
+        }
+        // 此处 x 为 10
+        body=document.getElementById("body")
+        body.innerHTML = x
+    </script>
+</body>
+
+</html>

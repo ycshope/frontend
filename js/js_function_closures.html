@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 闭包</h1>
+
+    <p>使用局部变量计数。</p>
+
+    <button type="button" onclick="myFunction()">计数！</button>
+
+    <p id="demo">0</p>
+
+    <script>
+        // 閉包的由來
+        //一个计数器的困境:
+        // 假设您想使用变量来计数，并且您希望此计数器可用于所有函数。
+        // 方案1:使用全局变量和函数来递增计数器：
+        // ---但這頁面任何代碼都可改變這個全局變量且不需要調用函數,而且不符合oop原則
+        // 方案2: JavaScript 嵌套函数(閉包)
+        var add = (function () {
+            //閉包
+            var counter = 0;
+            return function () { counter += 1; return counter; }
+        })();
+        // 等價寫法
+        // function add() {
+        //     var counter = 0;
+        //     function plus() { counter += 1; }
+        //     plus();
+        //     return counter;
+        // }
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = add();
+        }
+    </script>
+
+</body>
+
+</html>

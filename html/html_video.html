@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HTML 视频</title>
+        <!-- 
+            方法有很多如:
+            embed,object,a,但是这里推荐用h5的vedio
+         -->
+    </head>
+    <body>
+            <h1>vedio</h1>
+            <audio controls="controls" height="100" width="100">
+                <source src="song.mp3" type="audio/mp3" />
+                <source src="song.ogg" type="audio/ogg" />
+              <embed height="100" width="100" src="song.mp3" />
+              </audio>
+              <!-- 上例中使用了 4 中不同的视频格式。HTML 5 <video> 
+                  元素会尝试播放以 mp4、ogg 或 webm 格式中的一种来
+                  播放视频。如果均失败，则回退到 <embed> 元素。 -->
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <h1>通过 id 查找 HTML 元素</h1>
+
+    <p class="intro">Hello World!</p>
+    <p class="intro">Hello China!</p>
+    <p class="intro">Hello Shanghai!</p>
+
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        // jQuery 由 John Resig 于 2006 年创建。它旨在处理浏览器不兼容性并简化 HTML DOM 操作、事件处理、动画和 Ajax。
+
+        // 通过 id 来查找 HTML 元素
+        $(document).ready(function () {
+            // var myElement = document.getElementById("id01");
+            var myElements = $("#id01");
+            $("#demo1").text("段落 id03 的文本是：" + myElements[0].innerHTML);
+        });
+
+        // 通过标签名来查找 HTML 元素
+        $(document).ready(function () {
+            // 返回所有 <p> 元素
+            var myElements = $("p");
+            $("#demo2").text("第三段中的文本是：" + myElements[2].innerHTML);
+        });
+
+        // 通过类名来查找 HTML 元素
+        $(document).ready(function () {
+            var myElements = $(".intro");
+            $("#demo3").text("类名为 intro 的第三段文本是：" + myElements[2].innerHTML);
+        });
+
+        // 通过 CSS 选择器查找 HTML 元素
+        $(document).ready(function () {
+            var myElements = $("p.intro");
+            $("#demo4").text("类名为 intro 的第三段文本是：" + myElements[2].innerHTML);
+        });
+    </script>
+
+</body>
+
+</html>

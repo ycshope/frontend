@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 警告框</h1>
+
+    <button onclick="myFunction1()">alert</button>
+    <button onclick="myFunction2()">confirm</button>
+    <button onclick="myFunction3()">prompt</button>
+    <div id="demo1"></div>
+    <script>
+        // JavaScript 有三种类型的弹出框：警告框、确认框和提示框。
+        function myFunction1() {
+            alert("我是一个警告框！");
+        }
+
+
+        function myFunction2() {
+            var txt;
+            if (confirm("Press a button!")) {
+                txt = "您按了确定";
+            } else {
+                txt = "您按了取消";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+        function myFunction3() {
+            var txt;
+            var person = prompt("请输入您的名字：", "哈利波特");
+            if (person == null || person == "") {
+                txt = "用户取消输入";
+            } else {
+                txt = "你好，" + person + "！今天过得好吗？";
+            }
+            // script標簽注入失敗
+            //  img注入成功
+            document.getElementById("demo1").innerHTML = txt;
+        }
+    </script>
+
+</body>
+
+</html>

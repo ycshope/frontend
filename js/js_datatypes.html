@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <title></title>
+    <h1></h1>
+    <div id="body">
+    </div>
+    <script>
+        var length = 7;                             // 数字
+        var lastName = "Gates";                      // 字符串
+        var cars = ["Porsche", "Volvo", "BMW"];         // 数组
+        var x = { firstName: "Bill", lastName: "Gates" };    // 对象 
+        //undefined和null不是一回事,但是都可以拿来置空数据
+        typeof length //'number'
+        typeof lastName //'string'
+        typeof cars //'object'
+        typeof x //'object'
+        x = null
+        typeof x //'object',值被清空,但是类型不变
+        x = undefined
+        typeof x //'undefined'
+        //null 和 undefined 的关系
+        null === undefined            // false
+        null == undefined             // true
+    </script>
+</body>
+
+</html>

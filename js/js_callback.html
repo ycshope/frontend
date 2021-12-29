@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 回调</h1>
+
+    <p>进行计算，然后显示结果。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // 何时使用回调？
+        // 上面的例子并不是很令人兴奋。
+        // 它们经过简化了，为的是向您讲解回调的语法。
+        // 回调真正闪光之处是异步函数，其中一个函数必须等待另一个函数（例如等待文件加载）。
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        function myCalculator(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        myCalculator(5, 5, myDisplayer);//注意傳參是函數時不是myDisplayer()
+    </script>
+
+</body>
+
+</html>

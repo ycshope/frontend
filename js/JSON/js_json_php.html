@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<body>
+
+    <h1>使用 HTTP 方法 POST 把数据发送到 PHP 文件</h1>
+
+    <p id="demo"></p>
+</body>
+<script>
+    var xmlhttp, myObj, x, txt = "";
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            for (x in myObj) {
+                txt += myObj[x].CustomerId + "<br>";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    };
+    xmlhttp.open("POST", "/demo/demo_json_db.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+    //服務端PHP
+    // <?php
+    // PHP 提供处理 JSON 的内建函数。
+
+    // 通过使用 PHP 函数 json_encode()，PHP 中的对象可转换为 JSON：
+    // header("Content-Type: application/json; charset=UTF-8");
+    // $obj = json_decode($_POST["x"], false);
+
+    // $conn = new mysqli("myServer", "myUser", "myPassword", "Northwind");
+    // $result = $conn -> query("SELECT name FROM ".$obj -> $table." LIMIT ".$obj -> $limit);
+    // $outp = array();
+    // $outp = $result -> fetch_all(MYSQLI_ASSOC);
+
+    // echo json_encode($outp);
+    // ?>
+</script>
+
+</html>

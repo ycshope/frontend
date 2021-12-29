@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>把 JavaScript 对象转换为 JSON 字符串，然后发送到服务器。</h2>
+    <p id="demo1"></p>
+    <script>
+        // JSON 文件的文件类型是 ".json"
+        // JSON 文本的 MIME 类型是 "application/json"
+        function json2String() {
+            var myObj = { "name": "Bill Gates", "age": 62, "city": "Seattle" };
+            var myJSON = JSON.stringify(myObj);
+            console.log(myJSON);    //{"name":"Bill Gates","age":62,"city":"Seattle"}
+            //會受到同源策略影響
+            // window.location = "/demo/demo_json.php?x=" + myJSON;
+
+            // 存儲JSON
+            localStorage.setItem("testJSON", myJSON);
+            console.log(localStorage);
+        }
+
+        function string2JSObj() {
+            var myJSON = '{ "name":"Bill Gates",  "age":62, "city":"Seattle" }';
+            var myObj = JSON.parse(myJSON);
+            document.getElementById("demo1").innerHTML = myObj.name; //Bill Gates
+            //也可以 myObj["name"];來訪問
+        }
+        json2String();
+        string2JSObj();
+    </script>
+
+</body>
+
+</html>
